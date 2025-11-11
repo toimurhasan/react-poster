@@ -1,4 +1,3 @@
-import React from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import { MdOutlineMessage } from "react-icons/md";
 
@@ -13,10 +12,7 @@ export const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex"></div>
       <div className="navbar-end">
-        <a
-          className="btn"
-          onClick={() => document.getElementById("my_modal_1").showModal()}
-        >
+        <a className="btn" onClick={() => document.getElementById("my_modal_1").showModal()}>
           <IoIosAddCircle className="pt-1 text-2xl" />
           New Post
         </a>

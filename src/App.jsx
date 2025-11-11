@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Modal } from "./components/Modal/Modal";
 import { ShowPosts } from "./components/ShowPosts/ShowPosts";
