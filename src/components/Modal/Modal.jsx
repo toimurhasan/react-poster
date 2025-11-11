@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Modal = ({ setPosts }) => {
+export const Modal = ({ posts, setPosts }) => {
   const addPost = (e) => {
     e.preventDefault();
 
@@ -8,7 +8,7 @@ export const Modal = ({ setPosts }) => {
       author: e.target.parentElement.author.value,
       description: e.target.parentElement.description.value,
     };
-    setPosts(newPost);
+    setPosts([...posts, newPost]);
     e.target.parentElement.reset();
   };
   return (
