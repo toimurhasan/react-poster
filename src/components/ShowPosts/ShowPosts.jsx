@@ -25,7 +25,10 @@ export const ShowPosts = ({ posts, setPosts }) => {
               <h2 className="card-title">Author: {p?.author}</h2>
               <p>Description: {p?.description}</p>
               <div className="card-actions">
-                <button className="btn btn-info" onClick={() => setAuthor(p)}>
+                <button
+                  className="btn btn-info"
+                  onClick={() => setAuthor({ ...p, index: i })}
+                >
                   Edit
                 </button>
                 <button
@@ -41,7 +44,12 @@ export const ShowPosts = ({ posts, setPosts }) => {
           </div>
         ))}
       </div>
-      <EditModal author={author} setAuthor={setAuthor} />
+      <EditModal
+        author={author}
+        setAuthor={setAuthor}
+        posts={posts}
+        setPosts={setPosts}
+      />
     </>
   );
 };
