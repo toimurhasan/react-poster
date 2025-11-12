@@ -9,10 +9,10 @@ export const EditModal = ({ author, setAuthor, posts, setPosts }) => {
 
     const newObj = { author, description };
 
-    console.log(newObj, posts);
-
     const newArray = posts.filter((post, i) => i !== index);
-    const updatedArray = [...newArray, newObj];
+    const updatedArray = [...newArray.slice(0, index), newObj, ...newArray.slice(index)];
+    // const updatedArray = [...newArray.slice(0, i), newObj];
+
     setPosts(updatedArray);
     setAuthor(null);
   };
