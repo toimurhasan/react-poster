@@ -10,6 +10,7 @@ export const App = () => {
     <div className="max-w-7xl mx-auto">
       <Navbar />
       <Modal setPosts={setPosts} posts={posts} />
+
       <ShowPosts setPosts={setPosts} posts={posts} />
     </div>
   );

@@ -13,12 +13,19 @@ export const Modal = ({ posts, setPosts }) => {
     <dialog id="my_modal_1" className="modal">
       <div className="modal-box">
         <form method="dialog">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
 
-          <h3 className="font-bold text-lg">Edit Post</h3>
+          <h3 className="font-bold text-lg">Add Post</h3>
           <div className="mt-2 space-y-2">
             {/* input to take author */}
-            <input name="author" type="text" placeholder="Type Author" className="input w-full" />
+            <input
+              name="author"
+              type="text"
+              placeholder="Type Author"
+              className="input w-full"
+            />
             {/* input to take description */}
             <input
               name="description"
@@ -28,7 +35,12 @@ export const Modal = ({ posts, setPosts }) => {
             />
           </div>
 
-          <input className="btn btn-success mt-2 " type="submit" value="Save" onClick={addPost} />
+          <input
+            className="btn btn-success mt-2 "
+            type="submit"
+            value="Save"
+            onClick={addPost}
+          />
         </form>
       </div>
     </dialog>

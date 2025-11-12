@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { EditModal } from "../EditModal/EditModal";
+
 export const ShowPosts = ({ posts, setPosts }) => {
+  const [author, setAuthor] = useState(null);
+
   const deletePost = (i) => {
     console.log(i);
     const newArray = posts.filter(function (item, index) {
@@ -7,7 +12,6 @@ export const ShowPosts = ({ posts, setPosts }) => {
 
     setPosts(newArray);
   };
-
   return (
     <>
       <div className="grid grid-cols-4 gap-4 mt-8">
@@ -21,7 +25,9 @@ export const ShowPosts = ({ posts, setPosts }) => {
               <h2 className="card-title">Author: {p?.author}</h2>
               <p>Description: {p?.description}</p>
               <div className="card-actions">
-                <button className="btn btn-info">Edit</button>
+                <button className="btn btn-info" onClick={() => setAuthor(p)}>
+                  Edit
+                </button>
                 <button
                   className="btn btn-error"
                   onClick={() => {
@@ -35,6 +41,7 @@ export const ShowPosts = ({ posts, setPosts }) => {
           </div>
         ))}
       </div>
+      <EditModal author={author} setAuthor={setAuthor} />
     </>
   );
 };
